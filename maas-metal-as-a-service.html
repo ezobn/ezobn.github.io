@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta property="og:title" content="MAAS - (Metal-as-a-Service)"/>
+    <meta property="og:title" content="MAAS - Metal as a Service"/>
     <meta property="og:url" content="/maas-metal-as-a-service.html"/>
     <meta property="og:site_name" content="FGTS Blog"/>
     <meta property="og:type" content="article"/>
 
     <link rel="canonical" href="/maas-metal-as-a-service.html" />
 
-    <title>MAAS - (Metal-as-a-Service) | FGTS Blog</title>
+    <title>MAAS - Metal as a Service | FGTS Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
@@ -31,7 +31,7 @@
 </head>
 
 <body id="index">
-<a class="hidden-phone" href="https://ezobn.github.io/">
+<a class="hidden-phone" href="https://http://github.com/ezobn/ezobn.github.io/">
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
 </a>
     <div class="row-fluid">
@@ -74,7 +74,7 @@
       <header>
         <h1 class="entry-title">
           <a href="/maas-metal-as-a-service.html" rel="bookmark"
-             title="Permalink to MAAS - (Metal-as-a-Service)">MAAS - (Metal-as-a-Service)</a></h1>
+             title="Permalink to MAAS - Metal as a Service">MAAS - Metal as a Service</a></h1>
       </header>
       <div class="entry-content">
 <footer class="post-info">
@@ -102,19 +102,19 @@
           <span class='st_email_hcount' displayText='Email'></span>
         </div>
 
-        <h2>MAAS - (Metal-as-a-Service) автоматизация установки операционных систем и выделение по требованию физических серверов</h2>
-<p>Как и облачные решения, MAAS позволяет представить кластер в виде пула ресурсов, которые могут быть запрошены в любой момент времени. Однако, в отличие от облачных платформ, выделение ресурсов на таком кластере происходит на уровне физических серверов, а не виртуальных. MAAS объединяет множество серверов в пул, а затем отдает команды с помощью веб или CLI-интерфейса на установку необходимой операционной системы.</p>
-<p>В основе MAAS используется  PXE окружение с возможностью загрузки с различных подготовленных образов операционных систем,  который позволяет превратить процесс установки и настройки ОС в чрезвычайно простую задачу, выполняемую с использованием двух-трех команд, а также позволяет автоматически вести инвентаризацию серверов при их добавлении в пул.</p>
+        <h2>MAAS - Metal as a Service</h2>
+<p>Metal as a Service brings the language of the cloud to physical servers. It makes it easy to set up the hardware on which to deploy any service that needs to scale up and down dynamically; a cloud being just one example.</p>
+<p>It lets you provision your servers dynamically, just like cloud instances – only in this case, they’re whole physical nodes. “Add another node to the Hadoop cluster, and make sure it has at least 16GB RAM” is as easy as asking for it.</p>
 <p><img alt="MAAS architecture" src="http://maas.ubuntu.com/docs1.5/_images/orientation_architecture-diagram.png" /></p>
-<p>MAAS спроектирован с учетом возможности масштабирования от нескольких серверов до тысяч серверов при необходимости.  Это достигается за счет современной архитектуры решения. Ключевые компоненты MAAS:</p>
+<p>MAAS is designed to work with your physical hardware, whether your setup includes thousands of server boxes or only a few. The key components of the MAAS software are:</p>
 <ul>
 <li>Region controller</li>
 <li>Cluster controller(s)</li>
 <li>Nodes</li>
 </ul>
-<p>Для небольших исталяций (по числу узлов), достаточно установки Region controller и Сluster controller на одном и том же сервере - если требуется установка с поддержкой серверов (Nodes) в нескольких сементах сети, имеет смысл в установке на каждый сегмент отдельного Cluster controller. </p>
-<p>С помощью простого Web interface MAAS позволяет, устанвливать, обновлять и удалять сервера по желанию. Кроме того по каждому серверу доступна инвенторизационная информация, по количеству RAM, CPU, Storage, Network interfaces, а также полный XML  вывод "lshw" утилиты. </p>
-<p>API MAAS может быть использован с помощью утилиты <a href="http://juju.ubuntu.com/">Juju</a>  для развертывания на серверных ресурсах различных приложений из магазина приложений JuJu.</p>
+<p>For small (in terms of number of nodes) setups, you will probably just install the Region controller and a cluster controller on the same server - it is only worth having multiple region controllers if you need to organise your nodes into different subnets (e.g. if you have a lot of nodes).</p>
+<p>With a simple web interface, you can add, commission, update and recycle your servers at will. As your needs change, you can respond rapidly, by adding new nodes and dynamically re-deploying them between services. When the time comes, nodes can be retired for use outside the MAAS.</p>
+<p>MAAS works closely with the service orchestration tool  <a href="http://juju.ubuntu.com/">Juju</a> to make deploying services fast, reliable, repeatable and scalable.</p>
 
         <div class="sharethis-bottom">
           <span class='st_fblike_hcount' displayText='Facebook Like'></span>
