@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta property="og:title" content="MAAS - (Metal-as-a-Service)"/>
+    <meta property="og:url" content="/maas-metal-as-a-service.html"/>
+    <meta property="og:site_name" content="FGTS Blog"/>
+    <meta property="og:type" content="article"/>
+
+    <link rel="canonical" href="/maas-metal-as-a-service.html" />
+
+    <title>MAAS - (Metal-as-a-Service) | FGTS Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/bootstrap-responsive.min.css" type="text/css" />
+
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({
+            publisher: "c6a57063-7758-43f1-8987-728852dc33b8",
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false
+        });
+    </script>
+</head>
+
+<body id="index">
+<a class="hidden-phone" href="https://ezobn.github.io/">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" />
+</a>
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <header id="banner" >
+                <h1>
+                    <a href="/">FGTS Blog </a>
+                </h1>
+                <nav class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li ><a href="/category/review.html">Review</a></li>
+                            <li class="active"><a href="/category/ubuntu.html">Ubuntu</a></li>
+                        </ul>
+
+<script>
+  (function() {
+    var cx = '010876618395126198893:3pktv5ynnok';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div id="google-custom-search" class="nav">
+    <gcse:search></gcse:search>
+</div>
+                    </div>
+                </nav>
+            </header><!-- /#banner -->
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="row-fluid">
+<div class="span10 offset1">
+  <section>
+    <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/maas-metal-as-a-service.html" rel="bookmark"
+             title="Permalink to MAAS - (Metal-as-a-Service)">MAAS - (Metal-as-a-Service)</a></h1>
+      </header>
+      <div class="entry-content">
+<footer class="post-info">
+    <address class="vcard author">
+        by <a class="url fn" href="/author/evgeny-zobnitsev.html">Evgeny Zobnitsev</a>
+    </address>
+
+    in <a href="/category/ubuntu.html">Ubuntu</a>
+
+    on 2015-01-18
+
+        |
+        tags:         <a href="/tag/maas.html">MAAS</a>
+
+
+        |
+        <a href="/maas-metal-as-a-service.html#disqus_thread">comments</a>
+
+    
+</footer><!-- /.post-info -->
+        <div class="sharethis-top">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+
+        <h2>MAAS - (Metal-as-a-Service) автоматизация установки операционных систем и выделения по требованию физических серверов</h2>
+<p>Как и облачные решения, MAAS позволяет представить кластер в виде пула ресурсов, которые могут быть запрошены в любой момент времени. Однако, в отличие от облачных платформ, выделение ресурсов на таком кластере происходит на уровне физических серверов, а не виртуальных. MAAS объединяет множество серверов в пул, а затем отдает команды с помощью веб или CLI-интерфейса на установку необходимой операционной системы.</p>
+<p>В основе MAAS используется  PXE окружение с возможностью загрузки с различных подготовленных образов операционных систем,  который позволяет превратить процесс установки и настройки ОС в чрезвычайно простую задачу, выполняемую с использованием двух-трех команд, а также позволяет автоматически вести инвентаризацию серверов при их добавлении в пул.</p>
+<p><img alt="MAAS architecture" src="http://maas.ubuntu.com/docs1.5/_images/orientation_architecture-diagram.png" /></p>
+<p>MAAS спроектирован с учетом возможности масштабирования от нескольких серверов до тысяч серверов при необходимости.  Это достигается за счет современной архитектуры решения. Ключевые компоненты MAAS:</p>
+<ul>
+<li>Region controller</li>
+<li>Cluster controller(s)</li>
+<li>Nodes</li>
+</ul>
+<p>Для небольших исталяций (по числу узлов), достаточно установки Region controller и Сluster controller на одном и том же сервере - если требуется установка с поддержкой серверов (Nodes) в нескольких сементах сети, имеет смысл в установке на каждый сегмент отдельного Cluster controller. </p>
+<p>С помощью простого Web interface MAAS позволяет, устанвливать, обновлять и удалять сервера по желанию. Кроме того по каждому серверу доступна инвенторизационная информация, по количеству RAM, CPU, Storage, Network interfaces, а также полный XML  вывод "lshw" утилиты. </p>
+<p>API MAAS может быть использован с помощью утилиты <a href="http://juju.ubuntu.com/">Juju</a>  для развертывания на серверных ресурсах различных приложений из магазина приложений JuJu.</p>
+
+        <div class="sharethis-bottom">
+          <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+          <span class='st_plusone_hcount' displayText='Google +1'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+          <span class='st_email_hcount' displayText='Email'></span>
+        </div>
+      </div><!-- /.entry-content -->
+      <div class="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_identifier = "maas-metal-as-a-service.html";
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://blogfgtsru.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+      </div>
+
+    </article>
+  </section>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <address>
+                    <p>
+              <!--          This blog is proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>. -->
+                    </p>
+                    <p>
+              <!--          <a href="http://github.com/jsliang/pelican-fresh/">Fresh</a> is a responsive theme designed by <a href="http://jsliang.com/">jsliang</a> and <a href="https://github.com/jsliang/pelican-fresh/graphs/contributors">contributors</a>.
+                        Special thanks to <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>. -->
+                    </p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+<script type="text/javascript">
+    var disqus_shortname = 'blogfgtsru';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+</body>
+</html>
